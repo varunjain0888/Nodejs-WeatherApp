@@ -5,7 +5,7 @@ const geocode = require('./utils/geocode')
 const forecast = require('./utils/forecast')
 
 const app = express()
-
+const port = process.env.PORT || 3000
 
 //for coustomizing views directory path so that we can use any other name intead of folder name as 'views'
 const publicDirectoryPath = path.join(__dirname,'../public/')
@@ -91,6 +91,6 @@ app.get('*',(req, res)=>{
         name:'Varun'
     })
 })
-app.listen(3000,()=>{
+app.listen(port,()=>{
     console.log('Express server started successfully.')
 })
